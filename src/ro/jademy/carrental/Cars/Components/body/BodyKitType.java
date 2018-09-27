@@ -1,6 +1,6 @@
-package ro.jademy.carrental.Cars.Components.BodyKitParts;
+package ro.jademy.carrental.cars.components.body;
 
-public enum BodyKitTypes {
+public enum BodyKitType {
     SEDAN("Sedan"),
     COUPE("Coupe"),
     HATCHBACK("Hatchback"),
@@ -10,7 +10,7 @@ public enum BodyKitTypes {
 
     private String bodyKit;
 
-    BodyKitTypes(String bodyKit) {
+    BodyKitType(String bodyKit) {
         this.bodyKit = bodyKit;
     }
 

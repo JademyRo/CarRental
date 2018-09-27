@@ -1,13 +1,13 @@
-package ro.jademy.carrental.Cars.Components.GearBoxParts;
+package ro.jademy.carrental.cars.components.gearbox;
 
-public enum GBTypes {
+public enum GBType {
     MANUAL("Manual"),
     AUTOMATIC("Automatic"),
     SWITCHABLE("Swichable");
 
     private String transmission;
 
-    GBTypes (String transmission) {
+    GBType(String transmission) {
         this.transmission = transmission;
     }
 

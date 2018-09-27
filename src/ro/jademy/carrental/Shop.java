@@ -1,10 +1,10 @@
 package ro.jademy.carrental;
 
-import ro.jademy.carrental.Cars.*;
-import ro.jademy.carrental.Cars.Components.BodyKitParts.*;
-import ro.jademy.carrental.Cars.Components.GearBoxParts.*;
-import ro.jademy.carrental.Cars.DaciaTypes.DaciaLoganTypes.*;
-import ro.jademy.carrental.Persons.*;
+import ro.jademy.carrental.cars.Car;
+import ro.jademy.carrental.cars.components.body.ColorType;
+import ro.jademy.carrental.cars.components.gearbox.GearBoxType;
+import ro.jademy.carrental.cars.dacia.LoganStandard;
+import ro.jademy.carrental.persons.Salesman;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -16,21 +16,21 @@ public class Shop {
     private ArrayList<Car> rentedCars = new ArrayList<>();
     private Scanner scan = new Scanner(System.in);
 
-    private void generateSalesmas () {
-        salesmens.add(new Salesman("Gigi","Muschi","user1","1234"));
-        salesmens.add(new Salesman("Ion","Ion","user2","4321"));
-        salesmens.add(new Salesman("Vasile","Vrajitorul","user3","1111"));
+    private void generateSalesmas() {
+        salesmens.add(new Salesman("Gigi", "Muschi", "user1", "1234"));
+        salesmens.add(new Salesman("Ion", "Ion", "user2", "4321"));
+        salesmens.add(new Salesman("Vasile", "Vrajitorul", "user3", "1111"));
     }
 
     private void generateCars() {
-        availableCars.add(new LoganStandard("123", Colors.BLACK, GBTypes.MANUAL,2015, new BigDecimal(1000)));
-        availableCars.add(new LoganStandard("234", Colors.WHITE, GBTypes.AUTOMATIC,2018, new BigDecimal(1000)));
-        availableCars.add(new LoganStandard("345", Colors.RED, GBTypes.MANUAL,2016, new BigDecimal(1000)));
+        availableCars.add(new LoganStandard("123", ColorType.BLACK, GearBoxType.MANUAL, 2015, new BigDecimal(1000)));
+        availableCars.add(new LoganStandard("234", ColorType.WHITE, GearBoxType.AUTOMATIC, 2018, new BigDecimal(1000)));
+        availableCars.add(new LoganStandard("345", ColorType.RED, GearBoxType.MANUAL, 2016, new BigDecimal(1000)));
     }
 
     private boolean login(String username, String password) {
         // TODO: implement a basic user login
-        for( Salesman salesman : salesmens){
+        for (Salesman salesman : salesmens) {
             if (username.equals(salesman.getUsername()) && password.equals(salesman.getPassword())) {
                 System.out.println(username + " successfully logged in.");
                 return true;
@@ -40,7 +40,7 @@ public class Shop {
         return false;
     }
 
-    private void loginMenu () {
+    private void loginMenu() {
         boolean loginSuccessfull;
         do {
             System.out.println("Username:");
@@ -48,7 +48,7 @@ public class Shop {
             System.out.println("Password:");
             String password = scan.nextLine();
             loginSuccessfull = login(username, password);
-        }while(!loginSuccessfull);
+        } while (!loginSuccessfull);
     }
 
     private void showMenu() {
@@ -65,7 +65,7 @@ public class Shop {
         System.out.println("5. Logout");
         System.out.println("6. Exit");
     }
-    
+
     private void listAllCars() {
         for (Car car : availableCars) {
             car.showCar();
@@ -99,11 +99,11 @@ public class Shop {
         // Q: what should be the return type of this method?
     }
 
-    public void run () {
+    public void run() {
         generateSalesmas();
         generateCars();
         loginMenu();
         showMenu();
         listAllCars();
-    }
+}
 }

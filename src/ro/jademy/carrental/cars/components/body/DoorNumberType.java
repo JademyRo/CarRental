@@ -1,13 +1,13 @@
-package ro.jademy.carrental.Cars.Components.BodyKitParts;
+package ro.jademy.carrental.cars.components.bodykit;
 
-public enum Doors {
+public enum DoorNumberType {
     TWO(2),
     FOUR(4),
     SIX(6);
 
     private final Integer numberOfDoors;
 
-    Doors(int numberOfDoors) {
+    DoorNumberType(int numberOfDoors) {
         this.numberOfDoors = numberOfDoors;
     }
 

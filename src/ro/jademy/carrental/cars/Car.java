@@ -1,6 +1,8 @@
-package ro.jademy.carrental.Cars;
+package ro.jademy.carrental.cars;
 
-import ro.jademy.carrental.Cars.Components.*;
+import ro.jademy.carrental.cars.components.BodyKit;
+import ro.jademy.carrental.cars.components.Engine;
+import ro.jademy.carrental.cars.components.GearBox;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -17,7 +19,7 @@ public abstract class Car {
     private BigDecimal basePrice;
     private Boolean isCarRented;
 
-    Car() {
+    public Car() {
         this.isCarRented = false;
     }
 
@@ -56,9 +58,9 @@ public abstract class Car {
         args.add(make);
         args.add(model);
         args.add(engine.getModel());
-        args.add(engine.getFuel().getFuelName());
+        args.add(engine.getFuelType().getFuelName());
         args.add(bodyKit.getType().getBodyKit());
-        args.add(bodyKit.getDoors().getNumberOfDoors()+"");
+        args.add(bodyKit.getDoorNumberType().getNumberOfDoors() + "");
         args.add(gearBox.getType().getTransmission());
         args.add(year.toString());
         args.add(isCarRented.toString());

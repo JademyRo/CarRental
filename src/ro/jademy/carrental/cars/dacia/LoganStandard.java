@@ -1,10 +1,10 @@
-package ro.jademy.carrental.Cars.DaciaTypes.DaciaLoganTypes;
+package ro.jademy.carrental.cars.DaciaTypes.DaciaLoganTypes;
 
-import ro.jademy.carrental.Cars.Components.*;
-import ro.jademy.carrental.Cars.Components.BodyKitParts.*;
-import ro.jademy.carrental.Cars.Components.EngineParts.*;
-import ro.jademy.carrental.Cars.Components.GearBoxParts.*;
-import ro.jademy.carrental.Cars.DaciaTypes.DaciaLogan;
+import ro.jademy.carrental.cars.components.*;
+import ro.jademy.carrental.cars.components.body_kit_parts.*;
+import ro.jademy.carrental.cars.components.EngineParts.*;
+import ro.jademy.carrental.cars.components.GearBoxParts.*;
+import ro.jademy.carrental.cars.DaciaTypes.DaciaLogan;
 
 import java.math.BigDecimal;
 

@@ -1,6 +1,6 @@
-package ro.jademy.carrental.Cars.Components.BodyKitParts;
+package ro.jademy.carrental.cars.components.bodykit;
 
-public enum Colors {
+public enum ColorType {
     WHITE("White"),
     BLACK("Black"),
     RED("Red"),
@@ -11,7 +11,7 @@ public enum Colors {
 
     private String color;
 
-    Colors (String color) {
+    ColorType(String color) {
         this.color = color;
     }
 
