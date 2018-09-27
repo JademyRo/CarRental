@@ -1,20 +1,22 @@
-package ro.jademy.carrental.cars.DaciaTypes.DaciaLoganTypes;
+package ro.jademy.carrental.cars.dacia;
 
-import ro.jademy.carrental.cars.components.*;
-import ro.jademy.carrental.cars.components.body_kit_parts.*;
-import ro.jademy.carrental.cars.components.EngineParts.*;
-import ro.jademy.carrental.cars.components.GearBoxParts.*;
-import ro.jademy.carrental.cars.DaciaTypes.DaciaLogan;
+import ro.jademy.carrental.cars.components.BodyKit;
+import ro.jademy.carrental.cars.components.Engine;
+import ro.jademy.carrental.cars.components.GearBox;
+import ro.jademy.carrental.cars.components.body.BodyKitType;
+import ro.jademy.carrental.cars.components.body.ColorType;
+import ro.jademy.carrental.cars.components.body.DoorNumberType;
+import ro.jademy.carrental.cars.components.engine.FuelType;
+import ro.jademy.carrental.cars.components.gearbox.GearBoxType;
 
 import java.math.BigDecimal;
 
 public class LoganStandard extends DaciaLogan {
 
-    public LoganStandard(String chassisNo, Colors color, GBTypes gbType , Integer year, BigDecimal basePrice) {
-        super();
-        setBodyKit(new BodyKit(chassisNo, color, BodyKitTypes.SEDAN, Doors.FOUR));
-        setEngine(new Engine("1.2MPI", "75HP", Fuels.GASOLINE));
-        setGearBox(new GearBox(gbType));
+    public LoganStandard(String chassisNo, ColorType colorType, GearBoxType gearBoxType, Integer year, BigDecimal basePrice) {
+        setBodyKit(new BodyKit(chassisNo, colorType, BodyKitType.SEDAN, DoorNumberType.FOUR));
+        setEngine(new Engine("1.2MPI", "75HP", FuelType.GASOLINE));
+        setGearBox(new GearBox(gearBoxType));
         setYear(year);
         setBasePrice(basePrice);
     }

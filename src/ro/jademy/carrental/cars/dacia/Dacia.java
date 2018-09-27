@@ -1,9 +1,10 @@
-package ro.jademy.carrental.Cars;
+package ro.jademy.carrental.cars.dacia;
 
-public class Dacia extends Car{
+import ro.jademy.carrental.cars.Car;
 
-    protected Dacia () {
-        super();
+public abstract class Dacia extends Car {
+
+    public Dacia() {
         setMake("Dacia");
     }
 }

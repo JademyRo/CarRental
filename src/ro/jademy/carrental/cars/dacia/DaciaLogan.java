@@ -1,11 +1,8 @@
-package ro.jademy.carrental.cars.DaciaTypes;
-
-import ro.jademy.carrental.cars.dacia.Dacia;
+package ro.jademy.carrental.cars.dacia;
 
 public class DaciaLogan extends Dacia {
 
-    protected DaciaLogan () {
-        super();
+    protected DaciaLogan() {
         setModel("Logan");
     }
 }

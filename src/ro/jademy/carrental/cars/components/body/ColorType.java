@@ -1,4 +1,4 @@
-package ro.jademy.carrental.cars.components.bodykit;
+package ro.jademy.carrental.cars.components.body;
 
 public enum ColorType {
     WHITE("White"),

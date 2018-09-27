@@ -1,11 +1,11 @@
 package ro.jademy.carrental.cars.components.engine;
 
-public enum Fuel {
+public enum FuelType {
     GASOLINE("Gasoline"), DIESEL("Diesel"), ELECTRIC("Electric"), MIX("Mix");
 
     private String fuelName;
 
-    Fuel(String fuelName) {
+    FuelType(String fuelName) {
         this.fuelName = fuelName;
     }
 
