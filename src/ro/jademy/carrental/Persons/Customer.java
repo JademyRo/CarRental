@@ -1,8 +1,8 @@
-package ro.jademy.carrental.Persons;
+package ro.jademy.carrental.persons;
 
-public class Customer extends Person{
+public class Customer extends Person {
 
-    public Customer (String firstName , String lastName){
-        super(firstName,lastName);
+    public Customer(String firstName, String lastName) {
+        super(firstName, lastName);
     }
 }

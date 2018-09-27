@@ -1,17 +1,17 @@
-package ro.jademy.carrental.Cars.Components;
+package ro.jademy.carrental.cars.components;
 
-import ro.jademy.carrental.Cars.Components.EngineParts.*;
+import ro.jademy.carrental.cars.components.engine.FuelType;
 
 public class Engine {
 
     private String model;
     private String horsePower;
-    private Fuels fuel;
+    private FuelType fuelType;
 
-    public Engine(String model, String horsePower, Fuels fuel) {
+    public Engine(String model, String horsePower, FuelType fuelType) {
         this.model = model;
         this.horsePower = horsePower;
-        this.fuel = fuel;
+        this.fuelType = fuelType;
     }
 
     public String getModel() {
@@ -22,7 +22,7 @@ public class Engine {
         return horsePower;
     }
 
-    public Fuels getFuel() {
-        return fuel;
+    public FuelType getFuelType() {
+        return fuelType;
     }
 }

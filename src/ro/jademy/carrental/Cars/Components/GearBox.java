@@ -1,15 +1,15 @@
-package ro.jademy.carrental.Cars.Components;
+package ro.jademy.carrental.cars.components;
 
-import ro.jademy.carrental.Cars.Components.GearBoxParts.GBTypes;
+import ro.jademy.carrental.cars.components.gearbox.GearBoxType;
 
 public class GearBox {
-    private GBTypes type;
+    private GearBoxType type;
 
-    public GearBox (GBTypes type) {
+    public GearBox(GearBoxType type) {
         this.type = type;
     }
 
-    public GBTypes getType() {
+    public GearBoxType getType() {
         return type;
     }
 }

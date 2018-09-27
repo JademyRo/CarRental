@@ -1,34 +1,36 @@
-package ro.jademy.carrental.Cars.Components;
+package ro.jademy.carrental.cars.components;
 
-import ro.jademy.carrental.Cars.Components.BodyKitParts.*;
+import ro.jademy.carrental.cars.components.body.BodyKitType;
+import ro.jademy.carrental.cars.components.body.ColorType;
+import ro.jademy.carrental.cars.components.body.DoorNumberType;
 
 public class BodyKit {
 
     private String chassisNo;
-    private BodyKitTypes type;
-    private Colors color;
-    private Doors doors;
+    private BodyKitType type;
+    private ColorType colorType;
+    private DoorNumberType doorNumberType;
 
-    public BodyKit(String chassisNo, Colors color, BodyKitTypes type, Doors doors) {
+    public BodyKit(String chassisNo, ColorType colorType, BodyKitType type, DoorNumberType doorNumberType) {
         this.chassisNo = chassisNo;
-        this.color = color;
+        this.colorType = colorType;
         this.type = type;
-        this.doors = doors;
+        this.doorNumberType = doorNumberType;
     }
 
-    public String getChassisNo () {
+    public String getChassisNo() {
         return chassisNo;
     }
 
-    public BodyKitTypes getType() {
+    public BodyKitType getType() {
         return type;
     }
 
-    public Colors getColor() {
-        return color;
+    public ColorType getColorType() {
+        return colorType;
     }
 
-    public Doors getDoors() {
-        return doors;
+    public DoorNumberType getDoorNumberType() {
+        return doorNumberType;
     }
 }
