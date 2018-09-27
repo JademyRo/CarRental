@@ -1,16 +1,57 @@
 package ro.jademy.carrental;
 
+import ro.jademy.carrental.Cars.*;
+import ro.jademy.carrental.Cars.Components.BodyKitParts.*;
+import ro.jademy.carrental.Cars.Components.GearBoxParts.*;
+import ro.jademy.carrental.Cars.DaciaTypes.DaciaLoganTypes.*;
+import ro.jademy.carrental.Persons.*;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Shop {
-    // Q: what fields and methods should this class contain?
+    private ArrayList<Salesman> salesmens = new ArrayList<>();
+    private ArrayList<Car> availableCars = new ArrayList<>();
+    private ArrayList<Car> rentedCars = new ArrayList<>();
+    private Scanner scan = new Scanner(System.in);
 
-    public boolean login(String username, String password) {
+    private void generateSalesmas () {
+        salesmens.add(new Salesman("Gigi","Muschi","user1","1234"));
+        salesmens.add(new Salesman("Ion","Ion","user2","4321"));
+        salesmens.add(new Salesman("Vasile","Vrajitorul","user3","1111"));
+    }
 
+    private void generateCars() {
+        availableCars.add(new LoganStandard("123", Colors.BLACK, GBTypes.MANUAL,2015, new BigDecimal(1000)));
+        availableCars.add(new LoganStandard("234", Colors.WHITE, GBTypes.AUTOMATIC,2018, new BigDecimal(1000)));
+        availableCars.add(new LoganStandard("345", Colors.RED, GBTypes.MANUAL,2016, new BigDecimal(1000)));
+    }
+
+    private boolean login(String username, String password) {
         // TODO: implement a basic user login
-
+        for( Salesman salesman : salesmens){
+            if (username.equals(salesman.getUsername()) && password.equals(salesman.getPassword())) {
+                System.out.println(username + " successfully logged in.");
+                return true;
+            }
+        }
+        System.out.println("Wrong username or password , try again.");
         return false;
     }
 
-    public void showMenu() {
+    private void loginMenu () {
+        boolean loginSuccessfull;
+        do {
+            System.out.println("Username:");
+            String username = scan.nextLine();
+            System.out.println("Password:");
+            String password = scan.nextLine();
+            loginSuccessfull = login(username, password);
+        }while(!loginSuccessfull);
+    }
+
+    private void showMenu() {
 
         System.out.println(" -----------------------------------------------");
         System.out.println("|    Welcome to the Jademy Car Rental Service   |");
@@ -24,8 +65,19 @@ public class Shop {
         System.out.println("5. Logout");
         System.out.println("6. Exit");
     }
+    
+    private void listAllCars() {
+        for (Car car : availableCars) {
+            car.showCar();
+            System.out.println();
+        }
+    }
 
-    public void showListMenuOptions() {
+    private void listMenuFrame() {
+
+    }
+
+    private void showListMenuOptions() {
 
         System.out.println("Select an action from below:");
         System.out.println("1. Filter by make");
@@ -37,7 +89,7 @@ public class Shop {
 
     }
 
-    public void calculatePrice(int numberOfDays) {
+    private void calculatePrice(int numberOfDays) {
         // TODO: apply a discount to the base price of a car based on the number of rental days
         // TODO: document the implemented discount algorithm
 
@@ -45,5 +97,13 @@ public class Shop {
         //       weekdays and national holidays in which the discount should be smaller
 
         // Q: what should be the return type of this method?
+    }
+
+    public void run () {
+        generateSalesmas();
+        generateCars();
+        loginMenu();
+        showMenu();
+        listAllCars();
     }
 }
